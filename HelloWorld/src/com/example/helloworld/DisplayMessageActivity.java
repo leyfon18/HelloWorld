@@ -4,8 +4,8 @@ import android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class DisplayMessageActivity extends Activity {
@@ -40,6 +40,9 @@ public class DisplayMessageActivity extends Activity {
 	public void onStared(){
 		int myStringArray = 5; 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-		        android.R.layout.simple_list_item_1, myStringArray);	
+		        android.R.layout.simple_list_item_1, myStringArray);
+		ListView listView = (ListView) findViewById(R.id.listview);
+		listView.setAdapter(adapter);
+		
 	}
 }
